@@ -12,6 +12,5 @@ def userList(request):
     result = auth.list_users().iterate_all()
     users = []
     for user in auth.list_users().iterate_all():
-        
         users.append({"uid":user.uid,"email":user.email,"name":user.display_name,"photo_url":user.photo_url,})
     return JsonResponse(users,safe=False)
